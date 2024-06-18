@@ -140,6 +140,3 @@ create sequence zorder_detail_seq;
 
 
 
-
-
-
