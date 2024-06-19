@@ -6,31 +6,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <title>메인</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
 </head>
 <body>
-<div class="page-main">
+	<!-- 헤더 -->
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<div class="content-main">
-		<h4>최신 상품</h4>
-		<div class="image-space">
-			<c:forEach var="item" items="${itemList}">
-			<div class="horizontal-area">
-				<a href="${pageContext.request.contextPath}/item/detail.do?item_num=${item.item_num}">
-					<img src="${pageContext.request.contextPath}/upload/${item.photo1}">
-					<span>${item.name}</span>
-					<br>
-					<b><fmt:formatNumber value="${item.price}"/>원</b>
-				</a>
-			</div>
-			</c:forEach>
-			<div class="float-clear">
-				<hr width="100%" size="1" noshade="noshade">
-			</div>
-		</div>
+	
+	<!-- 메인 화면  -->
+	<div class="container">
+	
 	</div>
-</div>
 </body>
 </html>
 
