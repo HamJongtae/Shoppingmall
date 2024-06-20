@@ -10,12 +10,15 @@
 <title>메인</title>
 </head>
 <body>
-	<!-- 헤더 -->
+	<!-- 헤더 시작 -->
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	
+	<!-- 헤더 끝 -->
+	<!-- 배경색 -->
+	<div style="background-color:#f7f7f7;">
 	<!-- 메인 화면  -->
 	<div class="container">
 	
+	</div>
 	</div>
 </body>
 </html>
