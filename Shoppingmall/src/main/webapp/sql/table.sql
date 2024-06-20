@@ -46,6 +46,3 @@ create sequence hboard_seq;
 
 
 
-
-
-
