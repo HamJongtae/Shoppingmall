@@ -30,11 +30,13 @@
 		<nav class="navbar navbar-expand-lg" style="height:100px;"> 
 			<div class="container">
 			<!-- 로고 시작 -->
+			<div>
 			
+			</div>
 			<!-- 로고 끝 -->
 			<!-- 메뉴 시작 -->
 			<div class="collapse navbar-collapse justify-content-between">
-				<ul class="navbar-nav">
+				<ul class="nav justify-content-center">
 					<!-- 첫 번째 메뉴 -->
 					<li class="nav-item dropdown"><a>가볼만한 곳</a>
 						<div class="dropdown-menu">

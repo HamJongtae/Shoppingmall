@@ -8,6 +8,12 @@
 <meta charset="UTF-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <title>메인</title>
+<style>
+	#carouselExampleIndicators {
+		width: 100%;
+		align:center: ;
+	}
+</style>
 </head>
 <body>
 	<!-- 헤더 시작 -->
@@ -20,17 +26,17 @@
   		<ol class="carousel-indicators">
     		<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     		<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    	<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    		<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   		</ol>
   		<div class="carousel-inner">
     		<div class="carousel-item active">
-      			<img class="d-block w-100" src="..." alt="First slide">
+      			<img src="${pageContext.request.contextPath}/images/제주도1.jpg" class="d-block w-100" style="width:100%; height: 450px;" alt="First slide">
     		</div>
     		<div class="carousel-item">
-      			<img class="d-block w-100" src="..." alt="Second slide">
+      			<img class="d-block w-100" src="..." style="width:100%; height: 450px;" alt="Second slide">
     		</div>
     		<div class="carousel-item">
-      			<img class="d-block w-100" src="..." alt="Third slide">
+      			<img class="d-block w-100" src="..." style="width:100%; height: 450px;" alt="Third slide">
     		</div>
   		</div>
   			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -71,6 +77,11 @@
 	
 	</div>
 	<!-- 배경색 끝 -->
+	
+	<!-- 바닥글 시작 -->
+	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+	<!-- 바닥글 끝 -->	
+	
 </body>
 </html>
 
