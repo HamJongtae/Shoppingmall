@@ -36,17 +36,18 @@
 			<div class="collapse navbar-collapse justify-content-between">
 				<ul class="navbar-nav">
 					<!-- 첫 번째 메뉴 -->
-					<li class="nav-item dropdown"><a>메뉴1</a>
+					<li class="nav-item dropdown"><a>가볼만한 곳</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item">연습1</a>
 							<a class="dropdown-item">연습2</a>
 						</div>
 					</li>
 					<!-- 두 번째 메뉴 -->
-					<li class="nav-item dropdown"><a>메뉴2</a>
+					<li class="nav-item dropdown"><a>상품 예약</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item">연습3</a>
-							<a class="dropdown-item">연습4</a>
+							<a class="dropdown-item">숙소</a>
+							<a class="dropdown-item">항공권</a>
+							<a class="dropdown-item">투어상품</a>
 						</div>
 					</li>
 					<!-- 세 번째 메뉴 -->
@@ -54,6 +55,13 @@
 						<div class="dropdown-menu">
 							<a class="dropdown-item">자유게시판</a>
 							<a class="dropdown-item">이벤트</a>
+						</div>
+					</li>
+					<!-- 네 번째 메뉴 -->
+					<li class="nav-item dropdown"><a>고객센터</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item">공지사항</a>
+							<a class="dropdown-item">자주하는 질문</a>
 						</div>
 					</li>
 				</ul>
