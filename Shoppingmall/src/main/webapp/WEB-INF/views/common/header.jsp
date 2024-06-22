@@ -16,7 +16,7 @@
     margin-top: 0;
 }
 /* 메뉴 간격 조정 */
-.nav-item {
+.nav-item { 
     margin-left: 30px;
 }
 .nav-link{

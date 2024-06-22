@@ -41,7 +41,7 @@
     			<span class="carousel-control-next-icon" aria-hidden="true"></span>
     			<span class="sr-only">Next</span>
   			</a>
-	</div>
+	</div> 
 	<!-- 메인화면 끝 -->
 	<!-- 가볼만한 곳 시작 -->
 	<div>
