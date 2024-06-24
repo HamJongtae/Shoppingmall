@@ -1,126 +1,114 @@
 package kr.member.vo;
 
+import java.sql.Date;
+
 public class MemberVO {
-	private int mem_num;			//회원 번호
-	private String mem_id;			//아이디
-	private int mem_auth;			//회원등급
-	private String mem_name;		//이름
-	private String mem_email;		//이메일
-	private String mem_passwd; 		//비밀번호
-	private String mem_birth;		//생년월일
-	private String mem_phone;		//전화번호
-	private String mem_zipcode;		//우편번호
-	private String mem_address1;	//주소
-	private String mem_address2;	//상세 주소
-	private String mem_photo;		//프로필사진
-	private String mem_reg;			//가입일
-	private String mem_modify;		//수정일
-	private int mem_grade;			//등급
-	private int mem_total;			//총 누적 구매 금액
+	private int mem_num;		//회원 번호
+	private String id;			//아이디
+	private int auth;			//회원 등급
+	private String name;		//이름
+	private String passwd;		//비밀번호
+	private String phone;		//전화번호
+	private String email;		//이메일
+	private String zipcode;		//우편번호
+	private String address1;	//주소
+	private String address2;	//상세 주소
+	private String photo;		//프로필 사진
+	private Date reg_date;		//가입일
+	private Date modify_date;	//수정일
 	
-	//비밀번호 일치 여부 확인 
+	//비밀번호 일치 여부 체크
 	public boolean isCheckedPassword(String userPasswd) {
-		if(mem_auth > 1 && mem_passwd.equals(userPasswd)) {
+		//회원 등급(auth) : 0탈퇴회원,1정지회원,2일반회원,9관리자
+		if(auth > 1 && passwd.equals(userPasswd)) {
 			return true;
-		}		
+		}
 		return false;
 	}
-		
+	
 	public int getMem_num() {
 		return mem_num;
 	}
 	public void setMem_num(int mem_num) {
 		this.mem_num = mem_num;
 	}
-	public String getMem_id() {
-		return mem_id;
+	public String getId() {
+		return id;
 	}
-	public void setMem_id(String mem_id) {
-		this.mem_id = mem_id;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public int getMem_auth() {
-		return mem_auth;
+	public int getAuth() {
+		return auth;
 	}
-	public void setMem_auth(int mem_auth) {
-		this.mem_auth = mem_auth;
+	public void setAuth(int auth) {
+		this.auth = auth;
 	}
-	public String getMem_name() {
-		return mem_name;
+	public String getName() {
+		return name;
 	}
-	public void setMem_name(String mem_name) {
-		this.mem_name = mem_name;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getMem_email() {
-		return mem_email;
+	public String getPasswd() {
+		return passwd;
 	}
-	public void setMem_email(String mem_email) {
-		this.mem_email = mem_email;
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
 	}
-	public String getMem_passwd() {
-		return mem_passwd;
+	public String getPhone() {
+		return phone;
 	}
-	public void setMem_passwd(String mem_passwd) {
-		this.mem_passwd = mem_passwd;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-	public String getMem_birth() {
-		return mem_birth;
+	public String getEmail() {
+		return email;
 	}
-	public void setMem_birth(String mem_birth) {
-		this.mem_birth = mem_birth;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getMem_phone() {
-		return mem_phone;
+	public String getZipcode() {
+		return zipcode;
 	}
-	public void setMem_phone(String mem_phone) {
-		this.mem_phone = mem_phone;
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
 	}
-	public String getMem_zipcode() {
-		return mem_zipcode;
+	public String getAddress1() {
+		return address1;
 	}
-	public void setMem_zipcode(String mem_zipcode) {
-		this.mem_zipcode = mem_zipcode;
+	public void setAddress1(String address1) {
+		this.address1 = address1;
 	}
-	public String getMem_address1() {
-		return mem_address1;
+	public String getAddress2() {
+		return address2;
 	}
-	public void setMem_address1(String mem_address1) {
-		this.mem_address1 = mem_address1;
+	public void setAddress2(String address2) {
+		this.address2 = address2;
 	}
-	public String getMem_address2() {
-		return mem_address2;
+	public String getPhoto() {
+		return photo;
 	}
-	public void setMem_address2(String mem_address2) {
-		this.mem_address2 = mem_address2;
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
-	public String getMem_photo() {
-		return mem_photo;
+	public Date getReg_date() {
+		return reg_date;
 	}
-	public void setMem_photo(String mem_photo) {
-		this.mem_photo = mem_photo;
+	public void setReg_date(Date reg_date) {
+		this.reg_date = reg_date;
 	}
-	public String getMem_reg() {
-		return mem_reg;
+	public Date getModify_date() {
+		return modify_date;
 	}
-	public void setMem_reg(String mem_reg) {
-		this.mem_reg = mem_reg;
-	}
-	public String getMem_modify() {
-		return mem_modify;
-	}
-	public void setMem_modify(String mem_modify) {
-		this.mem_modify = mem_modify;
-	}
-	public int getMem_grade() {
-		return mem_grade;
-	}
-	public void setMem_grade(int mem_grade) {
-		this.mem_grade = mem_grade;
-	}
-	public int getMem_total() {
-		return mem_total;
-	}
-	public void setMem_total(int mem_total) {
-		this.mem_total = mem_total;
+	public void setModify_date(Date modify_date) {
+		this.modify_date = modify_date;
 	}
 	
 }
+
+
+
+
+
+

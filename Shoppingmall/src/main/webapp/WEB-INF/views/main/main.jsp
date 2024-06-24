@@ -30,7 +30,7 @@
   		</ol>
   		<div class="carousel-inner">
     		<div class="carousel-item active">
-      			<img src="${pageContext.request.contextPath}/images/제주도1.jpg" class="d-block w-100" style="width:100%; height: 450px;" alt="First slide">
+      			<img src="${pageContext.request.contextPath}/images/쇼핑몰1.jpg" class="d-block w-100" style="width:100%; height: 450px;" alt="First slide">
     		</div>
     		<div class="carousel-item">
       			<img class="d-block w-100" src="..." style="width:100%; height: 450px;" alt="Second slide">

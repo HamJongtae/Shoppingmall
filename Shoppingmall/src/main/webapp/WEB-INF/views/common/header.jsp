@@ -38,28 +38,44 @@
 			<div class="collapse navbar-collapse justify-content-between">
 				<ul class="nav justify-content-center">
 					<!-- 첫 번째 메뉴 -->
-					<li class="nav-item dropdown"><a>가볼만한 곳</a>
+					<li class="nav-item dropdown"><a>상의</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item">연습1</a>
-							<a class="dropdown-item">연습2</a>
+							<a class="dropdown-item">아우터</a>
+							<a class="dropdown-item">긴소매 티셔츠</a>
+							<a class="dropdown-item">반소매 티셔츠</a>	
 						</div>
 					</li>
 					<!-- 두 번째 메뉴 -->
-					<li class="nav-item dropdown"><a>상품 예약</a>
+					<li class="nav-item dropdown"><a>하의</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item">숙소</a>
-							<a class="dropdown-item">항공권</a>
-							<a class="dropdown-item">투어상품</a>
+							<a class="dropdown-item">데님 팬츠</a>
+							<a class="dropdown-item">슈트 팬츠/슬랙스</a>
+							<a class="dropdown-item">숏팬츠</a>
 						</div>
 					</li>
 					<!-- 세 번째 메뉴 -->
+					<li class="nav-item dropdown"><a>모자/가방</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item">모자</a>
+							<a class="dropdown-item">가방</a>
+						</div>
+					</li>
+					<!-- 네 번째 메뉴 -->
+					<li class="nav-item dropdown"><a>악세서리</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item">안경</a>
+							<a class="dropdown-item">팔찌</a>
+							<a class="dropdown-item">목걸이</a>
+						</div>
+					</li>
+					<!-- 다섯 번째 메뉴 -->
 					<li class="nav-item dropdown"><a>커뮤니티</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item">자유게시판</a>
 							<a class="dropdown-item">이벤트</a>
 						</div>
 					</li>
-					<!-- 네 번째 메뉴 -->
+					<!-- 여섯 번째 메뉴 -->
 					<li class="nav-item dropdown"><a>고객센터</a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item">공지사항</a>
