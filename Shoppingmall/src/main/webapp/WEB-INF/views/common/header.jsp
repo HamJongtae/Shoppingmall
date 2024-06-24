@@ -85,7 +85,7 @@
 				</ul>
 				<!-- 로그인 시작 -->
 				<div class="d-flex justify-content-center">
-					<a class="myLink">로그인</a>
+					<a class="myLink" href="${pageContext.request.contextPath}/member/loginForm.do">로그인</a>
 				</div>
 				<!-- 로그인 끝 -->
 			</div>
