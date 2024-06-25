@@ -252,5 +252,51 @@ public class MemberDAO {
 	//관리자- 회원등급 수정
 	//관리자- 아이디 찾기
 	//관리자- 비밀번호 찾기
+	
 	//관리자- 회원ID로 회원 정보를 가져오는 메서드
+	public MemberVO getMemberByMemId(String id) throws Exception {
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+	    MemberVO member = null;
+	    String sql = null;
+	    int cnt = 0;
+	    try {
+	        //커넥션풀로부터 커넥션 할당
+	        conn = DBUtil.getConnection();
+
+	        //SQL문 작성
+	        sql = "SELECT * FROM hmember JOIN hmember_detail USING(mem_num) WHERE id=?";
+
+	        //PreparedStatment 객체 생성
+	        pstmt = conn.prepareStatement(sql);
+
+	        //?에 데이터 바인딩
+	        pstmt.setString(++cnt, id);
+
+	        rs = pstmt.executeQuery();
+
+	        if (rs.next()) {
+	            member = new MemberVO();
+	            member.setMem_num(rs.getInt("mem_num"));
+	            member.setName(rs.getString("name"));
+	            member.setId(rs.getString("id"));
+	            member.setEmail(rs.getString("email"));
+	            member.setAuth(rs.getInt("auth"));
+	            member.setPhone(rs.getString("phone"));
+	            member.setZipcode(rs.getString("zipcode"));
+	            member.setAddress1(rs.getString("address1"));
+	            member.setAddress2(rs.getString("address2"));
+	            member.setPhoto(rs.getString("photo"));
+	            member.setReg_date(rs.getDate("reg_date"));//가입일
+	            member.setModify_date(rs.getDate("modify_date"));//수정일
+	        }
+
+	    } catch (Exception e) {
+	        throw new Exception(e);
+	    } finally {
+	        DBUtil.executeClose(rs, pstmt, conn);
+	    }
+	    return member;
+	}
 }
