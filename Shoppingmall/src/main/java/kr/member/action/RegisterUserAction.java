@@ -34,7 +34,7 @@ public class RegisterUserAction implements Action{
 		//회원 등록 후에 회원 번호 다시 가져오기
         member = dao.getMemberByMemId(member.getId());
 		
-		
+		 
 		//로그인 처리
         HttpSession session = request.getSession();
         session.setAttribute("user_num", member.getMem_num());

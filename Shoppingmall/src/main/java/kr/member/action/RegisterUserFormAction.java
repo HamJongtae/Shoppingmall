@@ -13,5 +13,5 @@ public class RegisterUserFormAction implements Action {
 		
 		return "/WEB-INF/views/member/registerUserForm.jsp";
 	}
-
+ 
 }
