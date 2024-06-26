@@ -87,8 +87,7 @@ public class MemberDAO {
 			//SQL문 작성
 			//hmember와 hmember_detail 테이블을 조인할 때
 			//누락된 데이터가 보여야 id 중복 체크 가능
-			sql = "SELECT * FROM hmember LEFT OUTER JOIN "
-				+ "hmember_detail USING(mem_num) WHERE id = ?";
+			sql = "SELECT * FROM hmember LEFT OUTER JOIN hmember_detail USING(mem_num) WHERE id = ?";
 			//PreparedStatement 객체 생성
 			pstmt = conn.prepareStatement(sql);
 			//?에 데이터 바인딩
