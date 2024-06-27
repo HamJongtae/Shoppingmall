@@ -84,9 +84,20 @@
 					</li>
 				</ul>
 				<!-- 로그인 시작 -->
+				<c:if test="${empty user_num}">
 				<div class="d-flex justify-content-center">
 					<a class="myLink" href="${pageContext.request.contextPath}/member/loginForm.do">로그인</a>
 				</div>
+				</c:if>
+				<c:if test="${!empty user_num}">
+					<div class="d-flex justify-content-center">
+						<a href="${pageContext.request.contextPath}/member/myPage.do">MY페이지</a>
+					</div>
+					<div class="d-flex justify-content-center">
+						<a href="${pageContext.request.contextPath}/member/logout.do">로그아웃</a>
+					</div>
+				</c:if>	
+				
 				<!-- 로그인 끝 -->
 			</div>
 			<!-- 메뉴 끝 -->	

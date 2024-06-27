@@ -15,18 +15,18 @@ public class LoginAction implements Action{
 		//전송된 데이터 인코딩 타입 지정
 		request.setCharacterEncoding("utf-8");
 		//전송된 데이터 반환
-		String mem_id = request.getParameter("mem_id");
-		String mem_passwd = request.getParameter("mem_passwd");
+		String id = request.getParameter("id");
+		String passwd = request.getParameter("passwd");
 		
 		MemberDAO dao = MemberDAO.getInstance();
-		MemberVO member = dao.checkMember(mem_id);
+		MemberVO member = dao.checkMember(id);
 		boolean check = false;
 		
 		if(member!=null) {//동일한 id 존재
 			//비밀번호 일치 여부 체크
-			check = member.isCheckedPassword(mem_passwd);
+			check = member.isCheckedPassword(passwd);
 			//정지,탈퇴 회원의 경우 상태 표시
-			request.setAttribute("mem_auth", member.getAuth());
+			request.setAttribute("auth", member.getAuth());
 		}
 		if(check) {//인증 성공
 			//로그인 처리
