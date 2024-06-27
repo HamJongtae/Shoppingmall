@@ -91,9 +91,7 @@
 				</c:if>
 				<c:if test="${!empty user_num}">
 					<div class="d-flex justify-content-center">
-						<a href="${pageContext.request.contextPath}/member/myPage.do">MY페이지</a>
-					</div>
-					<div class="d-flex justify-content-center">
+						<a class="me-5" href="${pageContext.request.contextPath}/member/myPage.do">MY페이지</a>
 						<a href="${pageContext.request.contextPath}/member/logout.do">로그아웃</a>
 					</div>
 				</c:if>	
