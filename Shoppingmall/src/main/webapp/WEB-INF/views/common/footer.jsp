@@ -41,29 +41,24 @@
         <div class="container-fluid rounded-bottom" style="padding-left:0; padding-right:0; background-color:#000000">
             <div class="row text-center">
                 <div class="col-md-4 mt-3">
-                    <h4 class="text-yellow"><b>회사 정보</b></h4>
+                    <h4 style="color: #CC66FF"><b>회사 정보</b></h4>
                     <ul class = "list-unstyled text-white">
-                        <li>회사명 : 카카오션</li>
+                        <li>회사명 : 나이트오션</li>
                         <li>주소 : 서울특별시 강남구</li>
                         <li>전화 : 02-123-4567</li>
-                        <li>email : carcarocean@test.com</li>
+                        <li>email : nightocean@test.com</li>
                     </ul>
                 </div>
                 <div class="col-md-4 mt-3">
-                    <h4 class="text-yellow"><b>운영 정보</b></h4>
+                    <h4 style="color: #CC66FF"><b>운영 정보</b></h4>
                     <ul class = "list-unstyled text-white">
                         <li>월요일 - 금요일, 9:00 - 18:00</li>
-                        <li>사업제휴 문의 : carcarocean@test.com</li>
+                        <li>사업제휴 문의 : nightocean@test.com</li>
                     </ul>
                 </div>
                 <div class="col-md-4 mt-3">
-                    <h4 class="text-yellow"><b>팀 정보</b></h4>
+                    <h4 style="color: #CC66FF"><b>제작자 정보</b></h4>
                     <ul class = "list-unstyled text-white">
-                        <li>김승연: 98kksy</li>
-                        <li>구승회: 9_win_h</li>
-                        <li>김찬윤: u_nee._</li>
-                        <li>박근휘: geunzzang22</li>
-                        <li>윤찬호: chanho__</li>
                         <li>함종태: h_whdxx</li>
                     </ul>
                 </div>

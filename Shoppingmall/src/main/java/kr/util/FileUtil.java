@@ -32,7 +32,7 @@ public class FileUtil {
 		return filename;
 	}
 	
-	//다중파일 생성 -김승연-
+	//다중파일 생성
 	public static String createFiles(HttpServletRequest request) throws IllegalStateException,IOException, ServletException{
 		//업로드 절대경로
 		String upload = request.getServletContext().getRealPath(UPLOAD_PATH);

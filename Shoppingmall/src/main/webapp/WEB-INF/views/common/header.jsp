@@ -25,17 +25,17 @@
 </style>
 </head>
 <body>
-	<div class="container-fluid rounded-bottom" style="padding-left:0; padding-right:0; background-color:#82F9B7;">
+	<div class="container-fluid rounded-bottom" style="padding-left:0; padding-right:0; background-color:#000;">
 		<!-- nav태그 상단 고정 -->
 		<nav class="navbar navbar-expand-lg" style="height:100px;"> 
 			<div class="container">
 			<!-- 로고 시작 -->
 			<div>
-			
+				<a href="${pageContext.request.contextPath}/main/main.do" class="navbar-brand"><img src="${pageContext.request.contextPath}/images/쇼핑몰로고.png" width="200"></a>
 			</div>
 			<!-- 로고 끝 -->
 			<!-- 메뉴 시작 -->
-			<div class="collapse navbar-collapse justify-content-between">
+			<div class="collapse navbar-collapse justify-content-between" style="color: #CC66FF">
 				<ul class="nav justify-content-center">
 					<!-- 첫 번째 메뉴 -->
 					<li class="nav-item dropdown"><a>상의</a>
@@ -85,12 +85,12 @@
 				</ul>
 				<!-- 로그인 시작 -->
 				<c:if test="${empty user_num}">
-				<div class="d-flex justify-content-center">
+				<div class="d-flex justify-content-center" style="color: #CC66FF">
 					<a class="myLink" href="${pageContext.request.contextPath}/member/loginForm.do">로그인</a>
 				</div>
 				</c:if>
 				<c:if test="${!empty user_num}">
-					<div class="d-flex justify-content-center">
+					<div class="d-flex justify-content-center" style="color: #CC66FF">
 						<a class="me-5" href="${pageContext.request.contextPath}/member/myPage.do">MY페이지</a>
 						<a href="${pageContext.request.contextPath}/member/logout.do">로그아웃</a>
 					</div>

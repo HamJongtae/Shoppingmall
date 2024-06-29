@@ -28,8 +28,7 @@ $(function(){
 		}
 		
 		if(my_photo.size > 1024*1024){
-			alert(Math.round(my_photo.size/1024) 
-					 + 'kbytes(1024kbytes까지만 업로드 가능)');
+			alert(Math.round(my_photo.size/1024) + 'kbytes(1024kbytes까지만 업로드 가능)');
 			$('.my-photo').attr('src',photo_path);
 			$(this).val('');//선택한 파일 정보 지우기
 			return;
@@ -117,12 +116,10 @@ $(function(){
 				</li>
 				<li>
 					<div class="align-center">
-						<input type="button" value="수정"
-						                     id="photo_btn">
+						<input type="button" value="수정" id="photo_btn">
 					</div>
 					<div id="photo_choice" style="display:none;">
-						<input type="file" id="photo"
-						          accept="image/gif,image/png,image/jpeg">
+						<input type="file" id="photo" accept="image/gif,image/png,image/jpeg">
 						<input type="button" value="전송" id="photo_submit">
 						<input type="button" value="취소" id="photo_reset">          
 					</div>
