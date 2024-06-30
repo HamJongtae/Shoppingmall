@@ -9,7 +9,7 @@ import kr.board.vo.BoardVO;
 import kr.controller.Action;
 import kr.util.FileUtil;
 
-public class WriteAction implements Action{
+public class UpdateAction implements Action{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -22,26 +22,37 @@ public class WriteAction implements Action{
 		//로그인 된 경우
 		//전송된 데이터 인코딩 타입 지정
 		request.setCharacterEncoding("utf-8");
-		//자바빈(VO)를 생성한 후 전송된 데이터를 저장
+		//전송된 데이터 반환
+		int board_num = Integer.parseInt(
+				         request.getParameter("board_num"));
+		BoardDAO dao = BoardDAO.getInstance();
+		//수정전 데이터
+		BoardVO db_board = dao.getBoard(board_num);
+		//로그인한 회원번호와 작성자 회원번호 일치 여부 체크
+		if(user_num != db_board.getMem_num()) {
+			//로그인한 회원번호와 작성자 회원번호 불일치
+			return "/WEB-INF/views/common/notice.jsp";
+		}
+		//로그인한 회원번호와 작성자 회원번호 일치
 		BoardVO board = new BoardVO();
+		board.setBoard_num(board_num);
 		board.setTitle(request.getParameter("title"));
 		board.setContent(request.getParameter("content"));
 		board.setIp(request.getRemoteAddr());
 		board.setFilename(
 				FileUtil.createFile(request, "filename"));
-		board.setMem_num(user_num);//작성자 회원번호
 		
-		BoardDAO dao = BoardDAO.getInstance();
-		dao.insertBoard(board);
+		dao.updateBoard(board);
 		
-		request.setAttribute("notice_msg", "글쓰기 완료");
-		request.setAttribute("notice_url", 
-				request.getContextPath()+"/board/list.do");
-		//JSP 경로 반환
-		return "/WEB-INF/views/common/alert_view.jsp";
+		if(board.getFilename()!=null && 
+				!"".equals(board.getFilename())) {
+			//새 파일로 교체할 때 원래 파일 제거
+			FileUtil.removeFile(request, db_board.getFilename());
+		}
+		return "redirect:/board/detail.do?board_num="+board_num;
 	}
-
 }
+
 
 
 

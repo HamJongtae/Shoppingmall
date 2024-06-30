@@ -31,7 +31,7 @@
 			<div class="container">
 			<!-- 로고 시작 -->
 			<div>
-				<a href="${pageContext.request.contextPath}/main/main.do" class="navbar-brand"><img src="${pageContext.request.contextPath}/images/쇼핑몰로고.png" width="200"></a>
+				<a href="${pageContext.request.contextPath}/main/main.do" class="navbar-brand"><img src="${pageContext.request.contextPath}/images/쇼핑몰로고.png" height="100" width="200"></a>
 			</div>
 			<!-- 로고 끝 -->
 			<!-- 메뉴 시작 -->
@@ -71,7 +71,7 @@
 					<!-- 다섯 번째 메뉴 -->
 					<li class="nav-item dropdown"><a>커뮤니티</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item">자유게시판</a>
+							<a class="dropdown-item" href="${pageContext.request.contextPath}/board/list.do">자유게시판</a>
 							<a class="dropdown-item">이벤트</a>
 						</div>
 					</li>
