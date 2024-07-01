@@ -26,30 +26,31 @@ $(function(){
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<div class="container pt-5 text-center">
-		<h2>로그인</h2>
-		<form id="login_form" action="login.do" method="post">
+	<div class="container pt-5 text-center" style = "margin-bottom:150px;">
+		<div class="row justify-content-center">
+		<div class="col-md-6">
+		<h2 class="text-center mt-5 mb-3" style="color: #CC66FF"><b>로그인</b></h2>
+		<form id="login_form" action="login.do" method="post" class="p-3 rounded-4 bg-light">
 			<ul class="list-unstyled">
 				<li class="floating-label">
-					<input type="text" class="form-input"
-					  placeholder="아이디" name="id" id="id"
-					  maxlength="12" autocomplete="off">
+					<input type="text" class="form-input" placeholder="아이디" name="id" id="id" maxlength="12" autocomplete="off">
 					<label for="id"></label>
 				</li>
 				<li class="floating-label">
-					<input type="password" class="form-input"
-					  placeholder="비밀번호" name="passwd" id="passwd"
-					  maxlength="12">
+					<input type="password" class="form-input" placeholder="비밀번호" name="passwd" id="passwd" maxlength="12">
 					<label for="passwd"></label>
 				</li>
 			</ul>
 			<div class="align-center">
-				<input type="submit" value="로그인">
-				<input type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
-				<input type="button" value="회원가입" onclick="location.href='${pageContext.request.contextPath}/member/registerUserForm.do'">
+				<input class="btn btn-dark" style="color: #CC66FF" type="submit" value="로그인">
+				<input class="btn btn-dark" style="color: #CC66FF" type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
+				<input class="btn btn-dark" style="color: #CC66FF" type="button" value="회원가입" onclick="location.href='${pageContext.request.contextPath}/member/registerUserForm.do'">
 			</div>
 		</form>
+		</div>
+		</div>
 	</div>
+<jsp:include page="/WEB-INF/views/common/footer.jsp"/>	
 </body>
 </html>
 
