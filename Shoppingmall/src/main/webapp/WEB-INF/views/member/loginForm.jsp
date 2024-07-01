@@ -25,23 +25,22 @@ $(function(){
 </script>
 </head>
 <body>
-<div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<div class="content-main">
+	<div class="container pt-5 text-center">
 		<h2>로그인</h2>
 		<form id="login_form" action="login.do" method="post">
-			<ul>
+			<ul class="list-unstyled">
 				<li class="floating-label">
 					<input type="text" class="form-input"
 					  placeholder="아이디" name="id" id="id"
 					  maxlength="12" autocomplete="off">
-					<label for="id">아이디</label>
+					<label for="id"></label>
 				</li>
 				<li class="floating-label">
 					<input type="password" class="form-input"
 					  placeholder="비밀번호" name="passwd" id="passwd"
 					  maxlength="12">
-					<label for="passwd">비밀번호</label>
+					<label for="passwd"></label>
 				</li>
 			</ul>
 			<div class="align-center">
@@ -51,7 +50,6 @@ $(function(){
 			</div>
 		</form>
 	</div>
-</div>
 </body>
 </html>
 
