@@ -37,24 +37,20 @@
 					<h2 class="text-center mt-2 mb-3" style="color: #CC66FF">
 						<b>로그인</b>
 					</h2>
-					<ul class="list-unstyled">
-						<li class="floating-label"><input type="text"
+					<div>
+						<div class="floating-label"><input type="text"
 							class="form-control" placeholder="아이디" name="id" id="id"
 							maxlength="12" autocomplete="off" style="width: 400px;">
-							<label for="id"></label></li>
-						<li class="floating-label"><input type="password"
+							<label for="id"></label></div>
+						<div class="floating-label"><input type="password"
 							class="form-control" placeholder="비밀번호" name="passwd" id="passwd"
 							maxlength="12" style="width: 400px;"> <label for="passwd"></label>
-						</li>
-					</ul>
+						</div>
+					</div>
 					<div class="align-center">
-						<input class="btn btn-dark" style="color: #CC66FF" type="submit"
-							value="로그인"> <input class="btn btn-dark"
-							style="color: #CC66FF" type="button" value="홈으로"
-							onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
-						<input class="btn btn-dark" style="color: #CC66FF" type="button"
-							value="회원가입"
-							onclick="location.href='${pageContext.request.contextPath}/member/registerUserForm.do'">
+						<input class="btn btn-dark" style="color: #CC66FF" type="submit" value="로그인"> 
+						<input class="btn btn-dark" style="color: #CC66FF" type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
+						<input class="btn btn-dark" style="color: #CC66FF" type="button" value="회원가입" onclick="location.href='${pageContext.request.contextPath}/member/registerUserForm.do'">
 					</div>
 				</form>
 			</div>

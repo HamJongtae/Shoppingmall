@@ -87,63 +87,50 @@ $(function(){
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<div class="content-main">
-		<h2>회원 가입</h2>
-		<form id="register_form" action="registerUser.do"
-		                                      method="post">
-			<ul>
+	<div class="container pt-5 text-center">
+		<form id="register_form" action="registerUser.do" method="post" class="p-3 rounded-4 bg-light">
+			<h2 class="text-center mt-2 mb-3" style="color: #CC66FF">회원 가입</h2>
+			<ul class="list-unstyled">
 				<li>
 					<label for="id">아이디</label>
-					<input type="text" name="id" id="id"
-					  maxlength="12" autocomplete="off" 
-					                     class="input-check">
-					<input type="button" value="ID중복체크" id="id_check">
+					<input type="text" name="id" id="id" maxlength="12" autocomplete="off" class="form-control" style="width: 400px;">
+					<input class="btn btn-dark" style="color: #CC66FF" type="button" value="ID중복체크" id="id_check">
 					<span id="message_id"></span>
 					<div class="form-notice">*영문 또는 숫자(4자~12자)</div>                     
 				</li>
 				<li>
 					<label for="name">이름</label>
-					<input type="text" name="name" id="name"
-					              maxlength="10" class="input-check">
+					<input type="text" name="name" id="name" maxlength="10" class="form-control" style="width: 400px;">
 				</li>
 				<li>
 					<label for="passwd">비밀번호</label>
-					<input type="password" name="passwd" id="passwd"
-					              maxlength="12" class="input-check">
+					<input type="password" name="passwd" id="passwd" maxlength="12" class="form-control" style="width: 400px;">
 				</li>
 				<li>
 					<label for="phone">전화번호</label>
-					<input type="text" name="phone" id="phone"
-					              maxlength="15" class="input-check">
+					<input type="text" name="phone" id="phone" maxlength="15" class="form-control" style="width: 400px;">
 				</li>
 				<li>
 					<label for="email">이메일</label>
-					<input type="email" name="email" id="email"
-					              maxlength="50" class="input-check">
+					<input type="email" name="email" id="email" maxlength="50" class="form-control" style="width: 400px;">
 				</li>
 				<li>
 					<label for="zipcode">우편번호</label>
-					<input type="text" name="zipcode" id="zipcode"
-					  maxlength="5" autocomplete="off" 
-					                         class="input-check">
-					<input type="button" value="우편번호 찾기" 
-					                onclick="execDaumPostcode()">                         
+					<input type="text" name="zipcode" id="zipcode" maxlength="5" autocomplete="off"  class="form-control" style="width: 400px;">
+					<input class="btn btn-dark" style="color: #CC66FF" type="button" value="우편번호 찾기" onclick="execDaumPostcode()">                         
 				</li>
 				<li>
 					<label for="address1">주소</label>
-					<input type="text" name="address1" id="address1"
-					              maxlength="30" class="input-check">
+					<input type="text" name="address1" id="address1" maxlength="30" class="form-control" style="width: 400px;">
 				</li>
 				<li>
 					<label for="address2">나머지 주소</label>
-					<input type="text" name="address2" id="address2"
-					              maxlength="30" class="input-check">
+					<input type="text" name="address2" id="address2" maxlength="30" class="form-control" style="width: 400px;">
 				</li>
 			</ul>    
 			<div class="align-center">
-				<input type="submit" value="등록">
-				<input type="button" value="홈으로"
-				    onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
+				<input class="btn btn-dark" style="color: #CC66FF" type="submit" value="등록">
+				<input class="btn btn-dark" style="color: #CC66FF" type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
 			</div>                                  
 		</form>
 		<!-- 다음 우편번호 API 시작 -->
