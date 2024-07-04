@@ -38,13 +38,14 @@
 						<b>로그인</b>
 					</h2>
 					<div>
-						<div class="floating-label"><input type="text"
-							class="form-control" placeholder="아이디" name="id" id="id"
-							maxlength="12" autocomplete="off" style="width: 400px;">
-							<label for="id"></label></div>
-						<div class="floating-label"><input type="password"
-							class="form-control" placeholder="비밀번호" name="passwd" id="passwd"
-							maxlength="12" style="width: 400px;"> <label for="passwd"></label>
+						<div class="form-group">
+							<input type="text"class="form-control" placeholder="아이디" name="id" id="id"
+								maxlength="12" autocomplete="off" style="width: 400px;">
+							<label for="id"></label>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="비밀번호" name="passwd" id="passwd"
+								maxlength="12" style="width: 400px;"> <label for="passwd"></label>
 						</div>
 					</div>
 					<div class="align-center">
