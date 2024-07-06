@@ -26,27 +26,26 @@ window.onload=function(){
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<div class="content-main">
-		<h2>게시판 목록</h2>
-		<form id="search_form" action="list.do" method="get">
-			<ul class="search">
-				<li>
+	<div class="container">
+		<h2 class="pt-5 pb-3">게시판 목록</h2>
+		<!-- 검색바 -->
+		<div class="d-flex justify-content-between align-items-center rounded" style="background-color: #f5f6f9;">
+			<div class="text-start ms-4 mt-5 mb-5" style="font-size: 15pt;">
+				총 ${count}건의 글이 있습니다.
+			</div>		
+		<form id="search_form" action="list.do" method="get" class="d-flex justify-content-center">
+			<div class="d-flex align-items-center ms-4 mt-5 mb-5">
 					<select name="keyfield">
 						<option value="1" <c:if test="${param.keyfield == 1}">selected</c:if>>제목</option>
 						<option value="2" <c:if test="${param.keyfield == 2}">selected</c:if>>작성자</option>
 						<option value="3" <c:if test="${param.keyfield == 3}">selected</c:if>>내용</option>
 					</select>
-				</li>
-				<li>
-					<input type="search" size="16" name="keyword"
-					            id="keyword" value="${param.keyword}">
-				</li>
-				<li>
+					<input type="search" size="16" name="keyword" id="keyword" value="${param.keyword}">			
 					<input type="submit" value="검색">
-				</li>
-			</ul>
+			</div>
 		</form>
-		<div class="list-space align-right">
+	</div>
+		<div class="divst-space adivgn-right">
 			<input type="button" value="글쓰기"
 			    onclick="location.href='writeForm.do'"
 			    	<c:if test="${empty user_num}">disabled="disabled"</c:if>  
