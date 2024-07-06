@@ -89,36 +89,45 @@ $(function(){
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<div class="container">
 	 <div class="row justify-content-center">
-		<form id="register_form" action="registerUser.do" method="post" class="p-3 rounded-4 bg-light">
+		<div>
+		<form id="register_form" action="registerUser.do" method="post" class="mt-5 mb-5 p-3 rounded-4 bg-light" style="width: 80%; margin: 0 auto;">
 			<h2 class="text-center mt-2 mb-3" style="color: #CC66FF">회원 가입</h2>
-				<div class="form-group">
-					<input type="text" name="id" id="id" maxlength="12" autocomplete="off" class="form-control" style="width: 400px;" placeholder="아이디">
+				<div class="form-group row" style="margin-left: 15px;">
+					<div class="col-9">
+					<input type="text" name="id" id="id" maxlength="12" autocomplete="off" class="form-control" style="width: 80%; margin: 0 auto;" placeholder="아이디">
+					</div>
+					<div class="col" style="margin-right: 50px;">
 					<input class="btn btn-dark" style="color: #CC66FF" type="button" value="ID중복체크" id="id_check">
 					<span id="message_id"></span>                  
+					</div>				
 				</div>
 				<div class="form-group">
-					<input type="text" name="name" id="name" maxlength="10" class="form-control" style="width: 400px;" placeholder="이름">
+					<input type="text" name="name" id="name" maxlength="10" class="form-control" style="width: 80%; margin: 0 auto;" placeholder="이름">
 				</div>
 				<div class="form-group">
-					<input type="password" name="passwd" id="passwd" maxlength="12" class="form-control" style="width: 400px;" placeholder="비밀번호">
+					<input type="password" name="passwd" id="passwd" maxlength="12" class="form-control" style="width: 80%; margin: 0 auto;" placeholder="비밀번호">
 				</div>
 				<div class="form-group">
-					<input type="text" name="phone" id="phone" maxlength="15" class="form-control" style="width: 400px;" placeholder="전화번호">
+					<input type="text" name="phone" id="phone" maxlength="15" class="form-control" style="width: 80%; margin: 0 auto;" placeholder="전화번호">
 				</div>
 				<div class="form-group">
-					<input type="email" name="email" id="email" maxlength="50" class="form-control" style="width: 400px;" placeholder="이메일">
+					<input type="email" name="email" id="email" maxlength="50" class="form-control" style="width: 80%; margin: 0 auto;" placeholder="이메일">
 				</div>
-				<div class="form-group">
-					<input type="text" name="zipcode" id="zipcode" maxlength="5" autocomplete="off"  class="form-control" style="width: 400px;" placeholder="우편번호">
+				<div class="form-group row" style="margin-left: 15px;">
+					<div class="col-9">
+					<input type="text" name="zipcode" id="zipcode" maxlength="5" autocomplete="off"  class="form-control" style="width: 80%; margin: 0 auto;" placeholder="우편번호">
+					</div>
+					<div class="col" style="margin-right: 50px;">
 					<input class="btn btn-dark" style="color: #CC66FF" type="button" value="우편번호 찾기" onclick="execDaumPostcode()">                         
+					</div>
 				</div>
 				<div class="form-group">
-					<input type="text" name="address1" id="address1" maxlength="30" class="form-control" style="width: 400px;" placeholder="주소">
+					<input type="text" name="address1" id="address1" maxlength="30" class="form-control" style="width: 80%; margin: 0 auto;" placeholder="주소">
 				</div>
 				<div class="form-group">
-					<input type="text" name="address2" id="address2" maxlength="30" class="form-control" style="width: 400px;" placeholder="상세주소">
+					<input type="text" name="address2" id="address2" maxlength="30" class="form-control" style="width: 80%; margin: 0 auto;" placeholder="상세주소">
 				</div>   
-			<div class="align-center">
+			<div class="mt-2 text-center">
 				<input class="btn btn-dark" style="color: #CC66FF" type="submit" value="등록">
 				<input class="btn btn-dark" style="color: #CC66FF" type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
 			</div>                                  
@@ -222,8 +231,10 @@ $(function(){
     }
 </script>		
 		<!-- 다음 우편번호 API 끝 -->
+		</div>
 	</div>
 </div>
+<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 </body>
 </html>
 

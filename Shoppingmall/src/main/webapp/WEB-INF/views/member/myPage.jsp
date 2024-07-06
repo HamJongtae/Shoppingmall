@@ -95,15 +95,44 @@ $(function(){
 	});
 });
 </script>
+<style type="text/css">
+.page-main{
+	background:#FFFFFF;
+	margin:40px 0;
+	border-radius:5px;
+	min-height:650px;
+}
+.content-main{
+	padding:10px 20px;
+}
+.mypage-div{
+	width:48%;
+	float:left;
+	padding:5px;
+}
+.mypage-end{
+	clear:both;
+}
+.my-photo{
+	object-fit:cover;
+	/*정사각형이 아니라 직사각형일 경우 원 안에 보여지게 할 중심 이미지의 위치를 지정*/
+	object-position:top;
+	/*사각형의 모서리 둥근 정도를 지정하는 속성,50%를 지정하면 완전한 원*/
+	border-radius:50%;
+}
+.align-center{
+	text-align:center;
+}
+</style>
 </head>
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<div class="content-main">
-		<h2>회원정보</h2>
+	<div class="container">
+		<h2 class="ms-3 mt-3 mb-3">회원정보</h2>
 		<div class="mypage-div">
-			<h3>프로필 사진</h3>
-			<ul>
+			<h4>프로필 사진</h4>
+			<ul class="list-unstyled p-5 rounded-5 bg-light">
 				<li>
 					<c:if test="${empty member.photo}">
 					<img src="${pageContext.request.contextPath}/images/face.png" 
@@ -116,18 +145,19 @@ $(function(){
 				</li>
 				<li>
 					<div class="align-center">
-						<input type="button" value="수정" id="photo_btn">
+						<input class="btn btn-dark" style="color: #CC66FF" type="button" value="수정" id="photo_btn">
 					</div>
 					<div id="photo_choice" style="display:none;">
 						<input type="file" id="photo" accept="image/gif,image/png,image/jpeg">
-						<input type="button" value="전송" id="photo_submit">
-						<input type="button" value="취소" id="photo_reset">          
+						<input class="btn btn-dark" style="color: #CC66FF" type="button" value="전송" id="photo_submit">
+						<input class="btn btn-dark" style="color: #CC66FF" type="button" value="취소" id="photo_reset">          
 					</div>
 				</li>
 			</ul>
-			<h3>연락처 <input type="button" value="연락처 수정"
-			        onclick="location.href='modifyUserForm.do'"></h3>
-			<ul>
+			<hr size="1" noshade="noshade" width="100%">
+			<h4>연락처 <input class="btn btn-dark" style="color: #CC66FF" type="button" value="연락처 수정"
+			        onclick="location.href='modifyUserForm.do'"></h4>
+			<ul class="list-unstyled p-5 rounded-5 bg-light">
 				<li>아이디 : ${member.id}</li>
 				<li>이름 : ${member.name}</li>
 				<li>전화번호 : ${member.phone}</li>
@@ -139,19 +169,22 @@ $(function(){
 				<li>최근 정보 수정일 : ${member.modify_date}</li>
 				</c:if>
 			</ul> 
-			<h3>비밀번호 수정 <input type="button" value="비밀번호 수정" 
-			               onclick="location.href='modifyPasswordForm.do'"></h3>
-			<h3>회원탈퇴 <input type="button" value="회원탈퇴" 
-			               onclick="location.href='deleteUserForm.do'"></h3>       
+			<div class="mb-4">
+			비밀번호 수정 <input class="btn btn-dark" style="color: #CC66FF" type="button" value="비밀번호 수정" onclick="location.href='modifyPasswordForm.do'">
+			회원탈퇴 <input class="btn btn-dark" style="color: #CC66FF" type="button" value="회원탈퇴" onclick="location.href='deleteUserForm.do'">      
+			</div>
 		</div>
 		<div class="mypage-div">
-			<h3>관심 게시물 목록</h3>
-			<table>
+			<h4>관심 게시물 목록</h4>
+			<table class="table table-hover mb-5">
+			<thead class="table-dark text-center">
 				<tr>
 					<th>제목</th>
 					<th>작성자</th>
 					<th>등록일</th>
 				</tr>
+			</thead>
+			<tbody class="text-center">
 				<c:forEach var="board" items="${boardList}">
 				<tr>
 					<td><a href="${pageContext.request.contextPath}/board/detail.do?board_num=${board.board_num}" target="_blank">${fn:substring(board.title,0,12)}</a></td>
@@ -159,15 +192,20 @@ $(function(){
 					<td>${board.reg_date}</td>
 				</tr>
 				</c:forEach>
+			</tbody>
 			</table>
-			<h3>상품구매목록 <input type="button" value="더보기" onclick="location.href='${pageContext.request.contextPath}/order/orderList.do'"></h3>
-			<table>
+			<hr size="1" noshade="noshade" width="100%">
+			<h4 class="mt-5">상품구매목록 <input class="btn btn-dark" style="color: #CC66FF" type="button" value="더보기" onclick="location.href='${pageContext.request.contextPath}/order/orderList.do'"></h4>
+			<table class="table table-hover mb-5">
+			<thead class="table-dark text-center">
 				<tr>
 					<th>주문번호</th>
 					<th>상품명</th>
 					<th>주문날짜</th>
 					<th>배송상태</th>
 				</tr>
+			</thead>
+			<tbody class="text-center">
 				<c:forEach var="order" items="${orderList}">
 				<tr>
 					<td>${order.order_num}</td>
@@ -182,11 +220,13 @@ $(function(){
 					</td>
 				</tr>
 				</c:forEach>
+				</tbody>
 			</table>
 		</div>
 		<div class="mypage-end"></div>
 	</div>
 </div>
+<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 </body>
 </html>
 

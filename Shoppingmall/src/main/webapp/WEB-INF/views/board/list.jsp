@@ -31,29 +31,25 @@ window.onload=function(){
 		<!-- 검색바 -->
 		<div class="d-flex justify-content-between align-items-center rounded" style="background-color: #f5f6f9;">
 			<div class="text-start ms-4 mt-5 mb-5" style="font-size: 15pt;">
-				총 ${count}건의 글이 있습니다.
+				<b>총 ${count}건의 글이 있습니다.</b>
 			</div>		
 		<form id="search_form" action="list.do" method="get" class="d-flex justify-content-center">
 			<div class="d-flex align-items-center ms-4 mt-5 mb-5">
-					<select name="keyfield">
+					<select name="keyfield" class="form-select" style="width: auto; margin-right: 10px;">
 						<option value="1" <c:if test="${param.keyfield == 1}">selected</c:if>>제목</option>
 						<option value="2" <c:if test="${param.keyfield == 2}">selected</c:if>>작성자</option>
 						<option value="3" <c:if test="${param.keyfield == 3}">selected</c:if>>내용</option>
 					</select>
-					<input type="search" size="16" name="keyword" id="keyword" value="${param.keyword}">			
-					<input type="submit" value="검색">
+					<input type="search" size="16" name="keyword" id="keyword" value="${param.keyword}" class="form-control rounded me-2">			
+					<input type="submit" value="검색" class="btn btn-dark me-3" style="color: #CC66FF">
 			</div>
 		</form>
 	</div>
-		<div class="divst-space adivgn-right">
-			<input type="button" value="글쓰기"
-			    onclick="location.href='writeForm.do'"
-			    	<c:if test="${empty user_num}">disabled="disabled"</c:if>  
-			>
-			<input type="button" value="목록"
-			    onclick="location.href='list.do'">
-			<input type="button" value="홈으로"
-			    onclick="location.href='${pageContext.request.contextPath}/main/main.do'">        
+		<div class="text-end mb-4">
+			<input class="btn btn-dark" style="color: #CC66FF" type="button" value="글쓰기" onclick="location.href='writeForm.do'"
+			    	<c:if test="${empty user_num}">disabled="disabled"</c:if>>
+			<input class="btn btn-dark" style="color: #CC66FF" type="button" value="목록" onclick="location.href='list.do'">
+			<input class="btn btn-dark" style="color: #CC66FF" type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do'">        
 		</div>
 		<c:if test="${count == 0}">
 		<div class="result-display">
@@ -61,7 +57,8 @@ window.onload=function(){
 		</div>
 		</c:if>
 		<c:if test="${count > 0}">
-		<table>
+		<table class="table table-hover mt-4">
+			<thead class="table-dark text-center" style="color: #CC66FF">
 			<tr>
 				<th>글번호</th>
 				<th>제목</th>
@@ -69,6 +66,8 @@ window.onload=function(){
 				<th>작성일</th>
 				<th>조회</th>
 			</tr>
+			</thead>
+			<tbody class="text-center">
 			<c:forEach var="board" items="${list}">
 			<tr>
 				<td>${board.board_num}</td>
@@ -78,11 +77,13 @@ window.onload=function(){
 				<td>${board.hit}</td>
 			</tr>				
 			</c:forEach>
+			</tbody>
 		</table>
-		<div class="align-center">${page}</div>
+		<div class="text-center mt-3 mb-3">${page}</div>
 		</c:if>
 	</div>
 </div>
+<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 </body>
 </html>
 

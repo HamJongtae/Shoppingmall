@@ -32,35 +32,31 @@ window.onload=function(){
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<div class="content-main">
-		<h2>글쓰기</h2>
-		<form id="write_form" action="write.do" method="post"
-		                        enctype="multipart/form-data">
-			<ul>
-				<li>
-					<label for="title">제목</label>
-					<input type="text" name="title" id="title"
-					                          maxlength="50">
+	<div class="container">
+		<h2 class="ms-5 mt-5 mb-5">게시판 글쓰기</h2>
+		<form id="write_form" action="write.do" method="post" enctype="multipart/form-data" class="p-5 rounded-5 bg-light mb-5" style="width: 80%; margin: 0 auto;">
+			<ul class="list-unstyled">
+				<li class="mb-2">
+					<label for="title" class="fs-4 mb-2 ms-5">제목</label>
+					<input class="form-control" type="text" name="title" id="title" maxlength="50" style="width: 80%;margin: 0 auto;">
+				</li>
+				<li class="mt-2">
+					<label for="content" class="fs-4 mb-2 ms-5">내용</label>
+					<textarea class="form-control" rows="5" cols="40" name="content" id="content" style="width: 80%;margin: 0 auto;"></textarea>
 				</li>
 				<li>
-					<label for="content">내용</label>
-					<textarea rows="5" cols="40"
-					  name="content" id="content"></textarea>
-				</li>
-				<li>
-					<label for="filename">이미지</label>
-					<input type="file" name="filename"
-					  id="filename" accept="image/gif,image/png,image/jpeg">
+					<input type="file" class="form-control mt-3 mb-2" name="filename" id="filename" accept="image/gif,image/png,image/jpeg"
+								style="width: 80%;margin: 0 auto;">
 				</li>
 			</ul>   
-			<div class="align-center">
-				<input type="submit" value="등록">
-				<input type="button" value="목록"
-				              onclick="location.href='list.do'">
+			<div class="text-center">
+				<input class="btn btn-dark" style="color: #CC66FF" type="submit" value="등록">
+				<input class="btn btn-dark" style="color: #CC66FF" type="button" value="목록" onclick="location.href='list.do'">
 			</div>                     
 		</form>
 	</div>
 </div>
+<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 </body>
 </html>
 

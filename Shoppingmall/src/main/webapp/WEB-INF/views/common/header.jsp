@@ -38,7 +38,7 @@
 			<div class="collapse navbar-collapse justify-content-between" style="color: #CC66FF">
 				<ul class="nav justify-content-center">
 					<!-- 첫 번째 메뉴 -->
-					<li class="nav-item dropdown"><a>상의</a>
+					<li class="nav-item dropdown"><a><b>상의</b></a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item">아우터</a>
 							<a class="dropdown-item">긴소매 티셔츠</a>
@@ -46,7 +46,7 @@
 						</div>
 					</li>
 					<!-- 두 번째 메뉴 -->
-					<li class="nav-item dropdown"><a>하의</a>
+					<li class="nav-item dropdown"><a><b>하의</b></a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item">데님 팬츠</a>
 							<a class="dropdown-item">슈트 팬츠/슬랙스</a>
@@ -54,14 +54,14 @@
 						</div>
 					</li>
 					<!-- 세 번째 메뉴 -->
-					<li class="nav-item dropdown"><a>모자/가방</a>
+					<li class="nav-item dropdown"><a><b>모자/가방</b></a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item">모자</a>
 							<a class="dropdown-item">가방</a>
 						</div>
 					</li>
 					<!-- 네 번째 메뉴 -->
-					<li class="nav-item dropdown"><a>악세서리</a>
+					<li class="nav-item dropdown"><a><b>악세서리</b></a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item">안경</a>
 							<a class="dropdown-item">팔찌</a>
@@ -69,16 +69,14 @@
 						</div>
 					</li>
 					<!-- 다섯 번째 메뉴 -->
-					<li class="nav-item dropdown"><a>커뮤니티</a>
+					<li class="nav-item dropdown"><a><b>커뮤니티</b></a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="${pageContext.request.contextPath}/board/list.do">자유게시판</a>
-							<a class="dropdown-item">이벤트</a>
 						</div>
 					</li>
 					<!-- 여섯 번째 메뉴 -->
-					<li class="nav-item dropdown"><a>고객센터</a>
+					<li class="nav-item dropdown"><a><b>고객센터</b></a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item">공지사항</a>
 							<a class="dropdown-item">자주하는 질문</a>
 						</div>
 					</li>
@@ -86,16 +84,15 @@
 				<!-- 로그인 시작 -->
 				<c:if test="${empty user_num}">
 				<div class="d-flex justify-content-center" style="color: #CC66FF">
-					<a class="myLink" href="${pageContext.request.contextPath}/member/loginForm.do">로그인</a>
+					<a class="text-decoration-none myLink" style="color: #CC66FF" href="${pageContext.request.contextPath}/member/loginForm.do"><b>로그인</b></a>
 				</div>
 				</c:if>
 				<c:if test="${!empty user_num}">
-					<div class="d-flex justify-content-center" style="color: #CC66FF">
-						<a class="me-5" href="${pageContext.request.contextPath}/member/myPage.do">MY페이지</a>
-						<a href="${pageContext.request.contextPath}/member/logout.do">로그아웃</a>
+					<div class="d-flex justify-content-center">
+						<a class="text-decoration-none me-5" style="color: #CC66FF" href="${pageContext.request.contextPath}/member/myPage.do"><b>MY페이지</b></a>
+						<a class="text-decoration-none" style="color: #CC66FF" href="${pageContext.request.contextPath}/member/logout.do"><b>로그아웃</b></a>
 					</div>
-				</c:if>	
-				
+				</c:if>			
 				<!-- 로그인 끝 -->
 			</div>
 			<!-- 메뉴 끝 -->	

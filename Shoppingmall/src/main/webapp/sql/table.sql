@@ -40,7 +40,32 @@ create table hboard(
 );
 create sequence hboard_seq;
 
+--좋아요
+create table hboard_fav(
+ board_num number not null,
+ mem_num number not null,
+ constraint hboard_fav_fk1 foreign key (board_num) 
+                        references hboard (board_num),
+ constraint hboard_fav_fk2 foreign key (mem_num)
+                        references hmember (mem_num)    
+);
 
+--댓글
+create table hboard_reply(
+ re_num number not null,
+ re_content varchar2(900) not null,
+ re_date date default sysdate not null,
+ re_modifydate date,
+ re_ip varchar2(40) not null,
+ board_num number not null,
+ mem_num number not null,
+ constraint hreply_pk primary key (re_num),
+ constraint hreply_fk1 foreign key (board_num) 
+                       references hboard (board_num),
+ constraint hreply_fk2 foreign key (mem_num)
+                       references hmember (mem_num)
+);
+create sequence hreply_seq;
 
 
 

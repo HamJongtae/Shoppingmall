@@ -14,24 +14,42 @@
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<div class="content-main">
-		<h2>${board.title}</h2>
-		<ul class="detail-info">
-			<li>
+	<div class="container">
+		<h2 class="pt-5 pb-3">게시판</h2>
+		<hr size="1" noshade="noshade" width="100%">
+		<div class="mt-4 mb-4 d-flex justify-content-between align-items-center">
+			<!-- 제목 -->
+				<div class="text-start fs-3 mt-1">​${board.title}</div>
+			<!-- 작성일 -->
+				<div class="text-end" style="margin-right: 30px;">
+					<c:if test="${!empty board.modify_date}">
+						${board.modify_date}
+					</c:if>
+					<c:if test="${empty board.modify_date}">
+						${board.reg_date}
+					</c:if>
+				</div>	
+		</div>
+		<hr size="1" noshade="noshade" width="100%">
+		
+		<div class="mt-1 mb-1 d-flex justify-content-between align-items-center">
+			<div class="d-flex align-items-center">
+				<div>
 				<c:if test="${!empty board.photo}">
-				<img src="${pageContext.request.contextPath}/upload/${board.photo}" 
-				                          width="40" height="40" class="my-photo">
+				<img src="${pageContext.request.contextPath}/upload/${board.photo}" width="40" height="40" class="my-photo">
 				</c:if>
 				<c:if test="${empty board.photo}">
-				<img src="${pageContext.request.contextPath}/images/face.png" 
-				                          width="40" height="40" class="my-photo">
+				<img src="${pageContext.request.contextPath}/images/face.png" width="40" height="40" class="my-photo">
 				</c:if>
-			</li>
-			<li>
-				${board.id}<br>
+				</div>
+				<div style="margin-left: 10px;">
+				${board.id}
+				</div>
+			</div>
+			<div style="margin-right: 30px;">
 				조회 : ${board.hit}
-			</li>
-		</ul>
+			</div>
+		</div>
 		<hr size="1" noshade="noshade" width="100%">
 		<c:if test="${!empty board.filename}">
 		<div class="align-center">
@@ -42,24 +60,19 @@
 			${board.content}
 		</p>
 		<hr size="1" noshade="noshade" width="100%">
-		<ul class="detail-sub">
-			<li>
+		<div class="detail-sub">
+			<div>
 				<%-- 좋아요 --%>
 				<img id="output_fav" data-num="${board.board_num}" 
 				  src="${pageContext.request.contextPath}/images/fav01.gif" width="50">
 				좋아요
 				<span id="output_fcount"></span>
-			</li>
-			<li>
-				<c:if test="${!empty board.modify_date}">
-				최근 수정일 : ${board.modify_date}
-				</c:if>
-				작성일 : ${board.reg_date}
+			</div>
+			<div class="text-center">		
 				<%-- 로그인한 회원번호와 작성자 회원번호가 일치해야 수정,삭제 가능 --%>
 				<c:if test="${user_num == board.mem_num}">
-				<input type="button" value="수정"
-				  onclick="location.href='updateForm.do?board_num=${board.board_num}'">
-				<input type="button" value="삭제" id="delete_btn">
+				<input class="btn btn-dark" style="color: #CC66FF" type="button" value="수정" onclick="location.href='updateForm.do?board_num=${board.board_num}'">
+				<input class="btn btn-dark" style="color: #CC66FF" type="button" value="삭제" id="delete_btn">
 				<script type="text/javascript">
 					const delete_btn = document.getElementById('delete_btn');
 					//이벤트 연결
@@ -71,8 +84,8 @@
 					};
 				</script>  
 				</c:if>
-			</li>
-		</ul>
+			</div>
+		</div>
 		<!-- 댓글 시작 -->
 		<div id="reply_div">
 			<span class="re-title">댓글 달기</span>
@@ -105,6 +118,7 @@
 		<!-- 댓글 끝 -->
 	</div>
 </div>
+<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 </body>
 </html>
 
