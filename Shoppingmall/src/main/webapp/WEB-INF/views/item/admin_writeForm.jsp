@@ -68,15 +68,12 @@ window.onload=function(){
 				</li>
 				<li>
 					<label for="detail">상품설명</label>
-					<textarea rows="5" cols="30"
-					  name="detail" id="detail"
-					  class="input-check"></textarea>
+					<textarea rows="5" cols="30" name="detail" id="detail" class="input-check"></textarea>
 				</li>
 			</ul>   
 			<div class="align-center">
 				<input type="submit" value="등록">
-				<input type="button" value="목록"
-				              onclick="location.href='adminList.do'">
+				<input type="button" value="목록" onclick="location.href='adminList.do'">
 			</div>                     
 		</form>
 	</div>
