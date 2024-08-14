@@ -40,7 +40,7 @@
 					<!-- 첫 번째 메뉴 -->
 					<li class="nav-item dropdown"><a><b>상의</b></a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="${pageContext.request.contextPath}/item/adminList.do">아우터</a>
+							<a class="dropdown-item" href="${pageContext.request.contextPath}/item/itemList.do">아우터</a>
 							<a class="dropdown-item">긴소매 티셔츠</a>
 							<a class="dropdown-item">반소매 티셔츠</a>	
 						</div>

@@ -60,7 +60,7 @@ window.onload=function(){
 			<c:forEach var="item" items="${list}">
 				<div class="horizontal-area">
 					<a href="detail.do?item_num=${item.item_num}">
-						<img src="${pageContext.request.contextPath}/upload/${item.photo1}">
+						<img src="${pageContext.request.contextPath}/upload/${item.photo}">
 						<span>
 							${item.name}<br>
 							<b><fmt:formatNumber value="${item.price}"/>원</b>
