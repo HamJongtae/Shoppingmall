@@ -80,6 +80,13 @@
 							<a class="dropdown-item" href="${pageContext.request.contextPath}/qa/list.do">고객 문의</a>
 						</div>
 					</li>
+					<c:if test="${user_auth == 9}">
+						<li class="nav-item dropdown"><a><b>관리자</b></a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="${pageContext.request.contextPath}/item/adminList.do">상품관리</a>
+							</div>
+						</li>
+					</c:if>
 				</ul>
 				<!-- 로그인 시작 -->
 				<c:if test="${empty user_num}">
