@@ -77,7 +77,7 @@
 					<!-- 여섯 번째 메뉴 -->
 					<li class="nav-item dropdown"><a><b>고객센터</b></a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item">자주하는 질문</a>
+							<a class="dropdown-item" href="${pageContext.request.contextPath}/qa/list.do">고객 문의</a>
 						</div>
 					</li>
 				</ul>

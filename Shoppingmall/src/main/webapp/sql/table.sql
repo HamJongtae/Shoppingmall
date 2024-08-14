@@ -68,6 +68,34 @@ create table hboard_reply(
 create sequence hreply_seq;
 
 
+--Q&A 게시판
+CREATE TABLE qa(
+qa_num NUMBER NOT NULL,               -- QA 식별자
+mem_num NUMBER NOT NULL,               -- 회원 식별자
+qa_title VARCHAR2(150) NOT NULL,
+qa_content CLOB NOT NULL,
+qa_photo VARCHAR2(400),
+qa_status NUMBER DEFAULT 1 NOT NULL,
+qa_reg DATE DEFAULT SYSDATE NOT NULL,
+qa_modify DATE,
+CONSTRAINT qa_pk PRIMARY KEY (qa_num),
+CONSTRAINT qa_fk FOREIGN KEY (mem_num) REFERENCES member (mem_num)
+);
+CREATE SEQUENCE qa_seq;
+
+--Q&A 게시판 답변
+CREATE TABLE qa_comment(
+qa_comm_num NUMBER NOT NULL,            -- QA 답변 식별자
+qa_num NUMBER NOT NULL,                  -- QA 식별자
+qa_comm_content CLOB NOT NULL,
+qa_comm_reg DATE DEFAULT SYSDATE NOT NULL,
+qa_comm_modify DATE,
+CONSTRAINT qa_comment_pk PRIMARY KEY (qa_comm_num),
+CONSTRAINT qa_comment_fk FOREIGN KEY (qa_num) REFERENCES qa (qa_num)
+);
+CREATE SEQUENCE qa_comment_seq;
+
+
 --상품
 create table hitem(
  item_num number not null,
