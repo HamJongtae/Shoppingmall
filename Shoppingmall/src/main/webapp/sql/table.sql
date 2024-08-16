@@ -96,7 +96,7 @@ CONSTRAINT qa_comment_fk FOREIGN KEY (qa_num) REFERENCES qa (qa_num)
 CREATE SEQUENCE qa_comment_seq;
 
 
---상품
+--아우터
 create table hitem(
  item_num number not null,
  name varchar2(30) not null,
@@ -111,4 +111,48 @@ create table hitem(
 );
 create sequence hitem_seq;
 
+--장바구니
+create table hcart(
+ cart_num number,
+ item_num number not null,
+ order_quantity number(7) not null,
+ reg_date date default sysdate not null,
+ mem_num number not null, -- 상품 구매자 회원번호
+ constraint hcart_pk primary key (cart_num),
+ constraint hcart_fk1 foreign key (item_num) references hitem (item_num),
+ constraint hcart_fk2 foreign key (mem_num) references hmember (mem_num)
+);
+create sequence hcart_seq;
 
+--주문
+create table horder(
+ order_num number not null,
+ order_total number(9) not null,
+ payment number(1) not null, --결제방식
+ status number(1) default 1 not null, --배송 상태
+ receive_name varchar2(30) not null,
+ receive_post varchar2(5) not null,
+ receive_address1 varchar2(90) not null,
+ receive_address2 varchar2(90) not null,
+ receive_phone varchar2(15) not null,
+ notice varchar2(4000),
+ reg_date date default sysdate not null,
+ modify_date date,
+ mem_num number not null,
+ constraint horder_pk primary key (order_num),
+ constraint horder_fk foreign key (mem_num) references hmember (mem_num)
+);
+create sequence horder_seq;
+
+create table horder_detail(
+ detail_num number not null,
+ item_num number not null,
+ item_name varchar2(30) not null,
+ item_price number(9) not null,
+ item_total number(9) not null,
+ order_quantity number(7) not null,
+ order_num number not null,
+ constraint horder_detail_pk primary key (detail_num),
+ constraint horder_detail_fk foreign key (order_num) references horder (order_num)
+);
+create sequence horder_detail_seq;
